@@ -1,50 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[关于hexo博客中JSimple主题相关配置的说明]]></title>
-    <url>%2F2018%2F06%2F10%2F%E5%85%B3%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E4%B8%ADJSimple%E4%B8%BB%E9%A2%98%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%B4%E6%98%8E%2F</url>
-    <content type="text"><![CDATA[关于JSimple的说明 JSimple主题即为本博客所使用的主题，其作者为唐先森。下载地址：JSimple主题地址，感谢唐先森的制作。 关于本文章的说明 其实吧，在作者的github（也就是上面的地址）中的README.zhCN.md文件中，已经对该主题的功能以及相关的配置进行了较为详细的说明，大家根据其教程进行相关配置就已经OK了，所以，本博客不将配置的操作流程作为主要内容，而是对于其中某些相关的细节部分，以及我们想要自定义修改时涉及的相关文件功能进行大概说明，以方便自定义操作。下面所说的所有内容都为我自行探索修改时所理解的，可能存在不正确和不全的地方，如有问题还请谅解。 下面进入正题（以下内容为对主题中相关文件及文件夹的解释说明） –blog\scaffolds\post.md 配置生成文章时的默认内容,即hexo n “xxx” 所产生页面内的内容，通常我们将较为固定的内容或者参数放进去 –blog\scaffolds\page.md 配置生成页面时的默认内容，即hexo new page “xxx” 时所产生页面目录下index.md文件内的默认内容 –themes\jsimple\layout 这是一个文件夹，主要是相关布局的控制 –\layout\archive.ejs 文章数量统计页面的控制，也就是左侧栏第二项的那个页面 –\layout\tags.ejs 标签统计页面的相关配置，也就是左侧栏第三项的标签统计页面 –layout\_partial 下面所列文件为该路径下文件 –_post.ejs 控制页面上端的菜单栏，如最近、前端等等，默认为显示主题配置文件中menu中的全部项，进入该文件你会发现他是用一个for循环进行自动加载，若想自定义显示的话可再次进行代码更改 –_comments.ejs 主要为内容为评论插件的控制，若想添加评论模块，则只需要将其代码引入到该文件。若是还想在文章中控制是否使用评论区，只需要在文章头部添加字段 comments： true/fales（选择其一）,然后再该文件中添加判断 if(page.comments) 将你的评论区代码块包裹其中就OK –layout.ejs 控制显示的赞赏码 如果要更改赞赏码可在此文件中更改，内容位于文件最下方，或者也可以直接将jsimple\soure\images文件夹下的赞赏码图片进行替换 –footer.ejs 主要是文章页面下方默认显示内容的控制，主要描述网站的相关信息，也就是你看到的 “本站点采用只是共享。。。。” 的内容 –head.ejs 主要为文章内上方显示时间等内容的相关控制，一般情况下不需要更改 –leftMenu.ejs 主要是左侧导航栏的控制内容，如果想要添加新的导航项，在主题配置文件内leftPagesMenu:项下添加新的导航信息，包括名称，链接，图标，然后在此文件中a标签下继续添加 –middleCover.ejs 主要控制左侧图片上显示的内容，在主题配置文件中进行变量定义及赋值，在此页面上进行格式控制和显示。想要显示更多内容只需要在此更改代码即可，HTML代码，相信你可以看得懂 –layout\_widget 以下内容为该目录下文件 –common-article.ejs 主要是浏览量信息控制，打赏图标等 –user-entry.ejs 控件图标，如搜索框等 –themes\jsimple\source\js 以下内容为该目录下文件 –simpleCore.js 控制建站时间计算，赞赏图显示时间 搜索框等内容， 白日/黑夜的控制， 如果需要更改左侧图片，则在此文件中进行更改，位于changeReadModel函数中 –其他内容，基本都在主题配置文件中进行更改 –类别和标签的别名控制在站点配置文件中category_map: tag_map: 中进行配置 –其他未提到的文件都为逻辑控制内容，基本不需要改 技术这东西其实真的很简单，前提是当我们会的时候。很多时候他就想有一层窗户纸，捅破了就：哇，好简单。但是捅破之间，我们不知道要熬多少个日日夜夜，这篇博客希望能帮助大家。 如果存在什么问题，欢迎在下方留言。]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>关于hexo博客中JSimple主题相关配置的说明</title>
+      <link href="/2018/06/10/%E5%85%B3%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E4%B8%ADJSimple%E4%B8%BB%E9%A2%98%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%B4%E6%98%8E/"/>
+      <url>/2018/06/10/%E5%85%B3%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E4%B8%ADJSimple%E4%B8%BB%E9%A2%98%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%B4%E6%98%8E/</url>
+      <content type="html"><![CDATA[<blockquote><h3 id="关于JSimple的说明"><a href="#关于JSimple的说明" class="headerlink" title="关于JSimple的说明"></a>关于JSimple的说明</h3><p>　　JSimple主题即为本博客所使用的主题，其作者为唐先森。下载地址：<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank" rel="noopener">JSimple主题地址</a>，感谢唐先森的制作。</p><h3 id="关于本文章的说明"><a href="#关于本文章的说明" class="headerlink" title="关于本文章的说明"></a>关于本文章的说明</h3><p>　　其实吧，在作者的github（也就是上面的地址）中的README.zhCN.md文件中，已经对该主题的功能以及相关的配置进行了较为详细的说明，大家根据其教程进行相关配置就已经OK了，所以，本博客不将配置的操作流程作为主要内容，而是对于其中某些相关的细节部分，以及我们想要自定义修改时涉及的相关文件功能进行大概说明，以方便自定义操作。下面所说的所有内容都为我自行探索修改时所理解的，可能存在不正确和不全的地方，如有问题还请谅解。</p><h3 id="下面进入正题（以下内容为对主题中相关文件及文件夹的解释说明）"><a href="#下面进入正题（以下内容为对主题中相关文件及文件夹的解释说明）" class="headerlink" title="下面进入正题（以下内容为对主题中相关文件及文件夹的解释说明）"></a>下面进入正题（以下内容为对主题中相关文件及文件夹的解释说明）</h3><p>　　–blog\scaffolds\post.md   配置生成文章时的默认内容,即hexo n “xxx” 所产生页面内的内容，通常我们将较为固定的内容或者参数放进去<br>　　–blog\scaffolds\page.md   配置生成页面时的默认内容，即hexo new page “xxx” 时所产生页面目录下index.md文件内的默认内容<br>　　–themes\jsimple\layout 这是一个文件夹，主要是相关布局的控制<br>　　–\layout\archive.ejs    文章数量统计页面的控制，也就是左侧栏第二项的那个页面<br>　　–\layout\tags.ejs    标签统计页面的相关配置，也就是左侧栏第三项的标签统计页面<br>　　<br>　　    –layout\_partial  下面所列文件为该路径下文件<br>　　    　　–_post.ejs    控制页面上端的菜单栏，如最近、前端等等，默认为显示主题配置文件中menu中的全部项，进入该文件你会发现他是用一个for循环进行自动加载，若想自定义显示的话可再次进行代码更改<br>　　    　　–_comments.ejs    主要为内容为评论插件的控制，若想添加评论模块，则只需要将其代码引入到该文件。若是还想在文章中控制是否使用评论区，只需要在文章头部添加字段 comments： true/fales（选择其一）,然后再该文件中添加判断 if(page.comments) 将你的评论区代码块包裹其中就OK<br>　　    　　–layout.ejs    控制显示的赞赏码  如果要更改赞赏码可在此文件中更改，内容位于文件最下方，或者也可以直接将jsimple\soure\images文件夹下的赞赏码图片进行替换<br>　　    　　–footer.ejs    主要是文章页面下方默认显示内容的控制，主要描述网站的相关信息，也就是你看到的 “本站点采用只是共享。。。。” 的内容<br>　　    　　–head.ejs    主要为文章内上方显示时间等内容的相关控制，一般情况下不需要更改<br>　　    　　–leftMenu.ejs    主要是左侧导航栏的控制内容，如果想要添加新的导航项，在主题配置文件内leftPagesMenu:项下添加新的导航信息，包括名称，链接，图标，然后在此文件中a标签下继续添加<br>　　    　　–middleCover.ejs    主要控制左侧图片上显示的内容，在主题配置文件中进行变量定义及赋值，在此页面上进行格式控制和显示。想要显示更多内容只需要在此更改代码即可，HTML代码，相信你可以看得懂<br>　　    –layout\_widget 以下内容为该目录下文件<br>　　    　　–common-article.ejs    主要是浏览量信息控制，打赏图标等<br>　　    　　–user-entry.ejs    控件图标，如搜索框等<br>　　    –themes\jsimple\source\js 以下内容为该目录下文件<br>　　    　　–simpleCore.js        控制建站时间计算，赞赏图显示时间   搜索框等内容， 白日/黑夜的控制， 如果需要更改左侧图片，则在此文件中进行更改，位于changeReadModel函数中<br>　　–其他内容，基本都在主题配置文件中进行更改<br>　　–类别和标签的别名控制在站点配置文件中category_map: tag_map: 中进行配置<br>　　–其他未提到的文件都为逻辑控制内容，基本不需要改</p></blockquote><hr><p>　　技术这东西其实真的很简单，前提是当我们会的时候。很多时候他就想有一层窗户纸，捅破了就：哇，好简单。但是捅破之间，我们不知道要熬多少个日日夜夜，这篇博客希望能帮助大家。<br>　　如果存在什么问题，欢迎在下方留言。</p>]]></content>
+      
       <categories>
-        <category>技术</category>
+          
+          <category> 技术 </category>
+          
       </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>JSimple</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[技术资源专题]]></title>
-    <url>%2F2018%2F06%2F09%2F%E6%8A%80%E6%9C%AF%E8%B5%84%E6%BA%90%E4%B8%93%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[本帖主要分享一下技术中的相关资源]]></content>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> JSimple </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>技术资源专题</title>
+      <link href="/2018/06/09/%E6%8A%80%E6%9C%AF%E8%B5%84%E6%BA%90%E4%B8%93%E9%A2%98/"/>
+      <url>/2018/06/09/%E6%8A%80%E6%9C%AF%E8%B5%84%E6%BA%90%E4%B8%93%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h4 id="本帖主要分享一下技术中的相关资源"><a href="#本帖主要分享一下技术中的相关资源" class="headerlink" title="本帖主要分享一下技术中的相关资源"></a>本帖主要分享一下技术中的相关资源</h4>]]></content>
+      
       <categories>
-        <category>资源</category>
+          
+          <category> 资源 </category>
+          
       </categories>
-      <tags>
-        <tag>资源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[hah]]></title>
-    <url>%2F2018%2F06%2F09%2Fhah%2F</url>
-    <content type="text"></content>
+      
+      
+        <tags>
+            
+            <tag> 资源 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>hah</title>
+      <link href="/2018/06/09/hah/"/>
+      <url>/2018/06/09/hah/</url>
+      <content type="html"><![CDATA[]]></content>
+      
       <categories>
-        <category>生活</category>
+          
+          <category> 生活 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[this]]></title>
-    <url>%2F2018%2F06%2F09%2Fthis%2F</url>
-    <content type="text"></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>this</title>
+      <link href="/2018/06/09/this/"/>
+      <url>/2018/06/09/this/</url>
+      <content type="html"><![CDATA[]]></content>
+      
       <categories>
-        <category>其他</category>
+          
+          <category> 其他 </category>
+          
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2018%2F06%2F09%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2018/06/09/hello-world/"/>
+      <url>/2018/06/09/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
       <categories>
-        <category>前端</category>
+          
+          <category> 前端 </category>
+          
       </categories>
-  </entry>
+      
+      
+    </entry>
+    
+  
+  
 </search>
