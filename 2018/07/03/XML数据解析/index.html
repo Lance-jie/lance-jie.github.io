@@ -75,9 +75,9 @@
 <div id="nav">
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="LS">LS</a>
-        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
-        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
-        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a>
+        <a href="/tags" title="Tags"><i class="fa fa-tags"></i><span>Tags</span></a>
         <!-- custom single page of menus -->
         
         
@@ -164,15 +164,15 @@
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
-        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -184,11 +184,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -215,11 +215,50 @@
             </div>
             <h2 class="post-title">XML数据解析</h2>
             <div class="post-meta">
-                本文总共109个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共1802个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <h4 id="上片文章中，我们对XML数据的格式有了一定的了解，那么我们要怎么对其进行解析呢？毕竟提取出来数据才是关键。首先我们需要下载XML解析工具：dom4j-jar，下载地址-密码：m5lv。"><a href="#上片文章中，我们对XML数据的格式有了一定的了解，那么我们要怎么对其进行解析呢？毕竟提取出来数据才是关键。首先我们需要下载XML解析工具：dom4j-jar，下载地址-密码：m5lv。" class="headerlink" title="　　上片文章中，我们对XML数据的格式有了一定的了解，那么我们要怎么对其进行解析呢？毕竟提取出来数据才是关键。首先我们需要下载XML解析工具：dom4j.jar，下载地址 密码：m5lv。"></a>　　上片文章中，我们对XML数据的格式有了一定的了解，那么我们要怎么对其进行解析呢？毕竟提取出来数据才是关键。首先我们需要下载XML解析工具：dom4j.jar，<a href="https://pan.baidu.com/s/1TeZALhCP0cvpal8XAV51KA" target="_blank" rel="noopener">下载地址</a> 密码：m5lv。</h4><p>####　　将包导入工程项目</p>
+            <h4 id="上片文章中，我们对XML数据的格式有了一定的了解，那么我们要怎么对其进行解析呢？毕竟提取出来数据才是关键。首先我们需要下载XML解析工具：dom4j-jar，下载地址-密码：m5lv。"><a href="#上片文章中，我们对XML数据的格式有了一定的了解，那么我们要怎么对其进行解析呢？毕竟提取出来数据才是关键。首先我们需要下载XML解析工具：dom4j-jar，下载地址-密码：m5lv。" class="headerlink" title="　　上片文章中，我们对XML数据的格式有了一定的了解，那么我们要怎么对其进行解析呢？毕竟提取出来数据才是关键。首先我们需要下载XML解析工具：dom4j.jar，下载地址 密码：m5lv。"></a>　　上片文章中，我们对XML数据的格式有了一定的了解，那么我们要怎么对其进行解析呢？毕竟提取出来数据才是关键。首先我们需要下载XML解析工具：dom4j.jar，<a href="https://pan.baidu.com/s/1TeZALhCP0cvpal8XAV51KA" target="_blank" rel="noopener">下载地址</a> 密码：m5lv。</h4><h4 id="我们依然是用上篇文章中的那个例子"><a href="#我们依然是用上篇文章中的那个例子" class="headerlink" title="　　我们依然是用上篇文章中的那个例子"></a>　　我们依然是用上篇文章中的那个例子</h4><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!-- 根元素 --&gt;
+&lt;persons&gt;
+    &lt;person&gt;
+        &lt;name nn=&quot;li&quot;&gt;李明&lt;/name&gt;
+        &lt;age&gt;19&lt;/age&gt;
+        &lt;sex&gt;女&lt;/sex&gt;
+    &lt;/person&gt;
+    &lt;person&gt;
+        &lt;name nn=&quot;wang&quot;&gt;王华&lt;/name&gt;
+        &lt;age&gt;21&lt;/age&gt;
+        &lt;sex&gt;男&lt;/sex&gt;
+    &lt;/person&gt;
+    &lt;person&gt;
+        &lt;name nn=&quot;zhang&quot;&gt;张三&lt;/name&gt;
+        &lt;age&gt;21&lt;/age&gt;
+        &lt;sex&gt;男&lt;/sex&gt;
+    &lt;/person&gt;
+&lt;/persons&gt;  
+
+</code></pre><p>　　 </p>
+<h4 id="首先当然是将包导入工程项目，因为我们是对XML数据进行解析，需要读取XML文件，因此我们定义XML文件读取对象："><a href="#首先当然是将包导入工程项目，因为我们是对XML数据进行解析，需要读取XML文件，因此我们定义XML文件读取对象：" class="headerlink" title="　　首先当然是将包导入工程项目，因为我们是对XML数据进行解析，需要读取XML文件，因此我们定义XML文件读取对象："></a>　　首先当然是将包导入工程项目，因为我们是对XML数据进行解析，需要读取XML文件，因此我们定义XML文件读取对象：</h4><blockquote>
+<p><code>SAXReader reader = new SAXReader();</code>  </p>
+</blockquote>
+<h4 id="因为我们是将XML文件作为一个文档处理的，因此我们获取该文档的对象："><a href="#因为我们是将XML文件作为一个文档处理的，因此我们获取该文档的对象：" class="headerlink" title="　　因为我们是将XML文件作为一个文档处理的，因此我们获取该文档的对象："></a>　　因为我们是将XML文件作为一个文档处理的，因此我们获取该文档的对象：</h4><blockquote>
+<p><code>Document document = reader.read(&quot;src/person.xml&quot;);</code>  </p>
+</blockquote>
+<h4 id="现在，我们的文档的对象就是document，我们可以对其数据进行处理了，获取其根节点元素："><a href="#现在，我们的文档的对象就是document，我们可以对其数据进行处理了，获取其根节点元素：" class="headerlink" title="　　现在，我们的文档的对象就是document，我们可以对其数据进行处理了，获取其根节点元素："></a>　　现在，我们的文档的对象就是document，我们可以对其数据进行处理了，获取其根节点元素：</h4><blockquote>
+<p><code>Element root = document.getRootElement();</code>  </p>
+</blockquote>
+<h4 id="因为根节点下由多个子元素组成，如本文的XML所示，该根节点下有三个子person标签，我们想提取这些标签内的数据，则我们需要先获取到所有的这些节点元素："><a href="#因为根节点下由多个子元素组成，如本文的XML所示，该根节点下有三个子person标签，我们想提取这些标签内的数据，则我们需要先获取到所有的这些节点元素：" class="headerlink" title="　　因为根节点下由多个子元素组成，如本文的XML所示，该根节点下有三个子person标签，我们想提取这些标签内的数据，则我们需要先获取到所有的这些节点元素："></a>　　因为根节点下由多个子元素组成，如本文的XML所示，该根节点下有三个子person标签，我们想提取这些标签内的数据，则我们需要先获取到所有的这些节点元素：</h4><blockquote>
+<p><code>List list=root.elements();</code>   </p>
+</blockquote>
+<h4 id="root-elements-的返回值就是persons标签下的所有一级子标签，我们将其放在list中。现在我们取到了我们想要的节点，接下来就该解"><a href="#root-elements-的返回值就是persons标签下的所有一级子标签，我们将其放在list中。现在我们取到了我们想要的节点，接下来就该解" class="headerlink" title="　　root.elements()的返回值就是persons标签下的所有一级子标签，我们将其放在list中。现在我们取到了我们想要的节点，接下来就该解"></a>　　root.elements()的返回值就是persons标签下的所有一级子标签，我们将其放在list中。现在我们取到了我们想要的节点，接下来就该解</h4><pre><code>for (Object object : list) {
+            Element e = (Element) object;
+            System.out.print(e.element(&quot;name&quot;).getText());
+            System.out.println(&quot;\t&quot;+e.element(&quot;name&quot;).attributeValue(&quot;nn&quot;).toString());
+}  
+</code></pre><p>　　  </p>
+<h4 id="这里我们用for-each进行循环遍历，我们想要获取的是person标签下的数据，也就是name-age和sex，这里我只对name进行获取操作。根据代码我们可以看出，想要获取每个标签的元素这需要对该标签进行get操作即可，比如这里我们获取的是name，而name是person的子标签，因此我们直接用e来进行获取。e-element-“标签名称”-则代表获取该标签的对象，然后用getText进行数据的获取。"><a href="#这里我们用for-each进行循环遍历，我们想要获取的是person标签下的数据，也就是name-age和sex，这里我只对name进行获取操作。根据代码我们可以看出，想要获取每个标签的元素这需要对该标签进行get操作即可，比如这里我们获取的是name，而name是person的子标签，因此我们直接用e来进行获取。e-element-“标签名称”-则代表获取该标签的对象，然后用getText进行数据的获取。" class="headerlink" title="　　这里我们用for..each进行循环遍历，我们想要获取的是person标签下的数据，也就是name,age和sex，这里我只对name进行获取操作。根据代码我们可以看出，想要获取每个标签的元素这需要对该标签进行get操作即可，比如这里我们获取的是name，而name是person的子标签，因此我们直接用e来进行获取。e.element(“标签名称”)则代表获取该标签的对象，然后用getText进行数据的获取。"></a>　　这里我们用for..each进行循环遍历，我们想要获取的是person标签下的数据，也就是name,age和sex，这里我只对name进行获取操作。根据代码我们可以看出，想要获取每个标签的元素这需要对该标签进行get操作即可，比如这里我们获取的是name，而name是person的子标签，因此我们直接用e来进行获取。e.element(“标签名称”)则代表获取该标签的对象，然后用getText进行数据的获取。</h4><h4 id="那么如果我们想获取别名呢？这里我们采用的是attributeValue-“标识符”-方法，他是获取标签中定义的元素的数据，如attributeValue-“nn”-toString-就是获取我们的别名，nn替换为你的标识符。"><a href="#那么如果我们想获取别名呢？这里我们采用的是attributeValue-“标识符”-方法，他是获取标签中定义的元素的数据，如attributeValue-“nn”-toString-就是获取我们的别名，nn替换为你的标识符。" class="headerlink" title="　　那么如果我们想获取别名呢？这里我们采用的是attributeValue(“标识符”)方法，他是获取标签中定义的元素的数据，如attributeValue(“nn”).toString()就是获取我们的别名，nn替换为你的标识符。"></a>　　那么如果我们想获取别名呢？这里我们采用的是attributeValue(“标识符”)方法，他是获取标签中定义的元素的数据，如attributeValue(“nn”).toString()就是获取我们的别名，nn替换为你的标识符。</h4><h4 id="让我们来看一下结果："><a href="#让我们来看一下结果：" class="headerlink" title="　　让我们来看一下结果："></a>　　让我们来看一下结果：</h4><p><img src="http://ss1.sinaimg.cn/large/006da3iGly1fsxipse5vbj307b02pgle&amp;690" alt="结果"></p>
 
         </div>
         <div class="post-tool">
@@ -228,7 +267,7 @@
             </a>
         </div>
         
-        <div class="post-tags">标签：
+        <div class="post-tags">Tags：
             
             <a href="/tags/xml/">xml</a>
             
