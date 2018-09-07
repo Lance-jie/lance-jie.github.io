@@ -49,7 +49,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>标签 - jsimple - 兰叔的博客</title>
+<title>localhost带来的坑 - 兰叔的博客</title>
 
 <meta name="keywords" content="">
 
@@ -69,7 +69,7 @@
 })();
 </script>
 
-<meta name="description " content="">
+<meta name="description " content="localhost带来的坑">
 </head>
 <body>
 <div id="nav">
@@ -142,25 +142,25 @@
 </div>
             <div class="page-title">
     <ul>
-        <li class="">
-            <a href="/" data-name="最近文章">最近</a>
-        </li>
+        <li><a href="/">最新</a></li>
         
-        <li class="">
-            <a href="/categories/skills" data-name="技术">技术</a>
-        </li>
-        
-        <li class="">
-            <a href="/categories/life" data-name="生活">生活</a>
-        </li>
-        
-        <li class="">
-            <a href="/categories/resource" data-name="资源">资源</a>
-        </li>
-        
-        <li class="">
-            <a href="/categories/others" data-name="其他">其他</a>
-        </li>
+            
+                <li class="active">
+                    <a href="/categories/skills" data-name="技术">技术</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/life" data-name="生活">生活</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/others" data-name="其他">其他</a>
+                </li>
+            
         
         <li class="page-search">
     <form id="search" class="search-form">
@@ -201,42 +201,73 @@
     </ul>
 </div>
 <div class="main-inner">
-    
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>兰叔</strong>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon2.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">兰叔</a>
+                    <span title="最后编辑于2018-09-07">2018-09-07</span>
+                </p>
+                <p>无脑程序猿的流浪之路</p>
+            </div>
+            <h2 class="post-title">localhost带来的坑</h2>
+            <div class="post-meta">
+                本文总共843个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h3 id="初入javaWeb所遇到的坑，说多了都是泪"><a href="#初入javaWeb所遇到的坑，说多了都是泪" class="headerlink" title="初入javaWeb所遇到的坑，说多了都是泪"></a>初入javaWeb所遇到的坑，说多了都是泪</h3><hr>
+<p>　　对于初入java web开发的新手来说，在本地进行开发调试是避免不了的，于是我们经常这样写localhost:post，也可以这样写127.0.0.1:post，反正访问的都是本机，也就心安理得了。<br>　　但是！！！<br>　　坑出现了。在前段时间做session控制的时候，惊现一个谜一样的bug，怎么说呢？当我第一次打开浏览器输入localhost:8080/进行用户登录的时候，惊奇的发现session创建成功，但是其他地方获取不到session的内容，百思不得其姐。<br>　　于是，果断采用debug进行跟踪调试，发现了一个惊天秘密：登录时产生的session的id与后续访问时的不一样！！！这也就意味着两次用的不是同一个session，这是什么鬼？？？（黑人问号脸）<br>　　在百番思索之后，这个大坑被发现了。localhost与127.0.0.1混用坑。<br>　　怎么说呢？localhost指的是本地服务器，127.0.0.1指的是本机地址，localhot(local)是不经网卡传输！这点很重要，它不受网络防火墙和网卡相关的的限制。127.0.0.1是通过网卡传输，依赖网卡，并受到网络防火墙和网卡相关的限制。（具体两类情况不做详细介绍）这也就意味着用127.0.0.1和localhost虽然访问的都是本地，但是相当于是两个不同的服务器。因此当我输入的地址是localhost:8080/，但是前段js配置里写的缺失127.0.0.1:8080/，这就导致登录和后续访问时使用的不是同一个服务器（虽然说都是你的电脑），因此产生两个不同的session。<br>　　坑找到了怎么办，测试一下呗，我用127.0.0.1进行访问登录，然后OK！问题解决。<br>　　这个问题吧，关键还是在于对于web方面的东西一知半解，在大神们的眼中一定很low，但是嘛，该跳的坑一个都不会少，跳着跳着就提升了是吧，希望和我一样的小白们坚持一下，跳完一个还有一个，回头了多没意思是吧。</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
             </a>
-            <em>·</em>2018-06-10
         </div>
-        <a class="post-title" href="/2018/06/10/关于hexo博客中JSimple主题相关配置的说明/" target="_blank" title="关于hexo博客中JSimple主题相关配置的说明">关于hexo博客中JSimple主题相关配置的说明</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+        
+        <div class="post-tags">Tags：
             
-                <em>·</em>
-                <a href="http://www.lshu.org.cn/tags/hexo/" target="_blank">hexo</a>
+            <a href="/tags/bug/">bug</a>
             
-                <em>·</em>
-                <a href="http://www.lshu.org.cn/tags/JSimple/" target="_blank">JSimple</a>
+            <a href="/tags/java-web/">java web</a>
             
         </div>
-    </div>
-    <div class="post-desc">
-        本文主要是对hexo博客中JSimple主题中相关配置与代码的说明
-    </div>
-</article>
-
-
-
+        
+    </article>
     
+    <p>本文代表个人观点，内容仅供参考。若有不恰当之处，望不吝赐教！</p>
+    
+    
+
+
+<!-- ������City�氲װ���� -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zNzE5Mi8xMzcyNg==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+
+hljs.initHighlightingOnLoad();
+</script>
+<noscript> Ϊ����ʹ�����������۹����뼤��JavaScript</noscript>
 </div>
-<!-- 分页开始 -->
+<!-- City�氲װ��������� -->
 
 
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
